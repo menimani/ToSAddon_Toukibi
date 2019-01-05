@@ -544,7 +544,11 @@ local function GetItemGrade(itemObj)
 		return recipeGrade;
 	end
 
-	if (grade == 0 and itemObj.ItemType ~= "Consume") then
+	if (itemObj.GroupName == "Premium") then
+		return 0
+	end
+
+	if (grade == 0) then
 		return nil
 	end
 
